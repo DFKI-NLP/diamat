@@ -1,1 +1,1 @@
-# diamat
+# DiaMaT
