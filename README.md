@@ -41,7 +41,9 @@ python -m spacy download en
 ```
 
 ## Run / Replicate Experiments
-Unzip ./data/output.zip
+Please, first validate data/input/config.INI.
+
+Unzip ./data/output.zip.
 
 Run train.py and then explain.py, afterwards link data/output/explain.jsonl in server/static/input, e.g.:
 ```
@@ -75,4 +77,3 @@ All preprocessed data needed to replicate the experiments is contained in ./data
 python preprocess.py
 ```
 Afterwards ./data/output/bundle.jsonl contains the bundled texts, tokens, indices etc. Rename bundle.jsonl and replace source.txt, machine.txt, human.txt and repeat the step if you would like to preprocess more data.
- 
