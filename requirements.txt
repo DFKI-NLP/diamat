@@ -1,0 +1,13 @@
+gensim
+tqdm
+git+https://github.com/albermax/innvestigate
+numpy
+#tensorflow-gpu==1.7.0
+keras==2.2.4
+pandas
+spacy
+scikit-learn
+urllib3
+flask
+ujson
+werkzeug

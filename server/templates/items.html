@@ -1,0 +1,184 @@
+<header>
+    <title>DiaMat</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</header>
+<body>
+<!--<div class="row">
+    <h1 align="center" style="font-family:Arial">Machine Translation Diagnosis Tool</h1>
+    <center><small>powered by</small></center>
+    <center><small>DFKI</small></center>
+</div> -->
+<div class="row">
+    <div class="column left" style="box-shadow:none;">
+    <div class="column middle" style="height:18%; max-height:200px; width:95%; overflow-y:hidden;">
+    <!--    <h3 align="center">Machine Translation Diagnosis Tool</h3>-->
+        <center><small><a href="https://www.dfki.de/en/web/"><img src="static/input/DFKI_Logo_e_schrift.jpg" style="display:block; margin-left:auto; margin-right:auto; width:100%"> </a></small></center>
+        <h1 align="center">DiaMaT</h1>
+    </div>
+<div class="column middle" style="height:71%; width:95%; overflow-y:hidden;">
+    <div style="width: 100%; height:100%; overflow-y:auto;">
+
+    <!--<img src="static/input/DFKI_Logo.jpg" style="display:block; margin-left:auto; margin-right:auto; width:50%">
+    -->
+        <h3>Legend</h3>
+    <span class="dropt" style="background-color:rgb(255,128,128)">Machine Evidence</span>  <span class="dropt" style="background-color:rgb(128,128,255)">Human Evidence</span>
+    <h3>Filter</h3>
+    <form method="post">
+    <!--<label for="noofexplanations"><strong>Number of Explanations:</strong></label>-->
+        <button class="collapsible" type="button" style="border-top-left-radius: 25px;border-top-right-radius: 25px;">Number of Explanations</button>
+    <div class="content">
+        <input type="text" name="noofexplanations" id="noofexplanations" value="{{ form.no_of_explanations }}" size="5" required>
+        <!--<input type="text" name="noofexplanations" id="noofexplanations" value="{{ form.no_of_explanations }}" size="5" required> <br>-->
+    </div>
+        <button class="collapsible" type="button">Filter Indices</button>
+        <div class="content">
+            <input type="text" name="filter_indices" id="filter_indices" {% if form.indices != None %} value="{{ form.indices}}" {% endif %} size="15"> <br>
+
+        </div>
+
+        <button class="collapsible" type="button">Filter Source</button>
+        <div class="content">
+            <input type="text" name="regex_source" id="regex_source" value="{{ form.regex_source }}" size="15" required> <br>
+        </div>
+        <button class="collapsible" type="button">Filter Machine</button>
+        <div class="content">
+            <input type="text" name="regex_machine" id="regex_machine" value="{{ form.regex_machine }}" size="15" required> <br>
+        </div>
+        <button class="collapsible" type="button">Filter Human</button>
+        <div class="content">
+            <input type="text" name="regex_human" id="regex_human" value="{{ form.regex_human }}" size="15" required> <br>
+        </div>
+
+        <button class="collapsible" type="button">Range Machine Softmax</button>
+        <div class="content">
+            <input type="text" name="range_machine_bottom_softmax" id="range_machine_bottom_softmax" value="{{ form.range_machine_softmax[0] }}" size="2" required> to
+            <input type="text" name="range_machine_top_softmax" id="range_machine_top_softmax" value="{{ form.range_machine_softmax[1] }}" size="2" required> <br>
+        </div>
+        <button class="collapsible" type="button">Range Human Softmax</button>
+        <div class="content">
+            <input type="text" name="range_human_bottom_softmax" id="range_human_bottom_softmax" value="{{ form.range_human_softmax[0] }}" size="2" required> to
+            <input type="text" name="range_human_top_softmax" id="range_human_top_softmax" value="{{ form.range_human_softmax[1] }}" size="2" required> <br>
+        </div>
+        <button class="collapsible" type="button">Range Machine Logits</button>
+        <div class="content">
+            <input type="text" name="range_machine_bottom_logits" id="range_machine_bottom_logits" value="{{ form.range_machine_logits[0] }}" size="2" required> to
+            <input type="text" name="range_machine_top_logits" id="range_machine_top_logits" value="{{ form.range_machine_logits[1] }}" size="2" required> <br>
+        </div>
+        <button class="collapsible" type="button">Range Human Logits</button>
+        <div class="content">
+            <input type="text" name="range_human_bottom_logits" id="range_human_bottom_logits" value="{{ form.range_human_logits[0] }}" size="2" required> to
+            <input type="text" name="range_human_top_logits" id="range_human_top_logits" value="{{ form.range_human_logits[1] }}" size="2" required> <br>
+        </div>
+
+        <button class="collapsible" type="button">Sort By</button>
+        <div class="content">
+            <input type="radio" name="sortby" id="machine_radio", value="machine" {% if form.sort_by == "machine" %} checked="checked" {% endif %}>
+            <label for="machine_radio">Machine</label>
+            <input type="radio" name="sortby" id="human_radio", value="human" {% if form.sort_by == "human" %} checked="checked" {% endif %}>
+            <label for="human_radio">Human</label>
+            <input type="radio" name="sortby" id="random_radio", value="random" {% if form.sort_by == "random" %} checked="checked" {% endif %}>
+            <label for="random_radio">Random</label> <br>
+        </div>
+        <button class="collapsible" type="button">Sort Key</button>
+        <div class="content">
+            <input type="radio" name="sortkey" id="softmax_radio", value="softmax" {% if form.sort_key == "softmax" %} checked="checked" {% endif %}>
+            <label for="softmax_radio">Softmax</label>
+            <input type="radio" name="sortkey" id="logits_radio", value="logits" {% if form.sort_key == "logits" %} checked="checked" {% endif %}>
+            <label for="logits_radio">Logits</label>
+        </div>
+        <button class="collapsible" type="button">Order</button>
+        <div class="content">
+            <input type="radio" name="order" id="descending_radio", value="descending" {% if form.order == "descending" %} checked="checked" {% endif %}>
+            <label for="descending_radio">Descending</label>
+            <input type="radio" name="order" id="ascending_radio", value="ascending" {% if form.order == "ascending" %} checked="checked" {% endif %}>
+            <label for="ascending_radio">Ascending</label><br>
+        </div>
+        <button class="collapsible" type="button">Gamma</button>
+        <div class="content">
+            <input type="text" name="gamma" id="gamma" value="{{ form.gamma }}" size="2" required>
+            <label for="gamma"></label><br>
+        </div>
+        <button class="collapsible" type="button" style="border-bottom-left-radius: 25px;border-bottom-right-radius: 25px;"></button>
+        <br>
+        <br>
+        <button class="collapsible" type="submit" style="border-radius: 25px;" value="Update" name="submit_button">Update</button>
+        <br>
+        <br>
+        <button class="collapsible" type="submit" style="border-radius: 25px;" value="Reset" name="submit_button">Reset</button>
+    <!--<input type="submit" value="Update" align="right">-->
+    </form>
+    <table style="width:100%", align="left">
+  <tr>
+    <th>Total</th>
+    <th>Hits</th>
+      <th>Showing</th>
+  </tr>
+  <tr>
+    <td align="center">{{total_len}}</td>
+      <td align="center">{{number_of_hits}}</td>
+      <td align="center">{{form.no_of_explanations}}</td>
+</table>
+<br>
+    <br>
+    <br>
+    <br>
+    </div>
+</div>
+    </div>
+
+<div class="column middle" style="overflow-y:hidden">
+    <div style="width: 100%; height:100%; overflow-y:scroll;">
+  {% for explanation in  explanations %}
+    <p align="right"><strong>Index</strong>: {{explanation.index}}</p>
+        <p><strong>Source</strong>:
+            {% for tup in explanation.source.words_rgb(form.gamma) %}
+            {% if tup[0] != "<pad>"%}
+                <span class="dropt" style="background-color: {{tup[1].__str__()}}" title="{{tup[1].score}}"> {{tup[0]}}</span>
+                {% endif %}
+                {% endfor %}
+        </p>
+    <p><strong>Machine</strong> ({{explanation.round(explanation.predictions['machine'])}}, {{explanation.round(explanation.softmax['machine'])}}):
+{% for tup in explanation.machine.words_rgb(form.gamma) %}
+    {% if tup[0] != "<pad>"%}
+        <span class="dropt" style="background-color: {{tup[1].__str__()}}" title="{{tup[1].score}}"> {{tup[0]}}</span>
+            {% endif %}
+    {% endfor %}
+</p>
+    <p><strong>Human</strong> ({{explanation.round(explanation.predictions['human'])}}, {{explanation.round(explanation.softmax['human'])}}):
+    {% for tup in explanation.human.words_rgb(form.gamma) %}
+    {% if tup[0] != "<pad>"%}
+        <span class="dropt" style="background-color: {{tup[1].__str__()}}" title="{{tup[1].score}}"> {{tup[0]}}</span>
+        {% endif %}
+        {% endfor %}
+</p><hr>
+{% endfor %}
+    </div>
+    </div>
+
+<!--<div class="column right">
+    <h2>Legend</h2>
+    Machine: <span style="background-color: red">&nbsp&nbsp&nbsp</span>
+    <br><br>
+    Human: <span style="background-color: blue">&nbsp&nbsp&nbsp</span>
+</div>-->
+</div>
+<!-- uncomment for collapsed buttons
+    <script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+</script> -->
+</body>
