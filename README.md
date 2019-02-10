@@ -4,11 +4,11 @@ A diagnostics tool.
 ![screenshot](https://github.com/DFKI-NLP/diamat/blob/master/resources/screenshot.png)
 
 ## Info 
+A DiaMaT demo is hosted [here](http://diamat.dfki.de).
+
 The tool deploys the [iNNvestigate](https://github.com/albermax/innvestigate) toolbox.
 
-To facilitate the replication of experiments, if this repo is cloned, 500 MB of data will be directly downloaded from the GitHub LFS server.  
-
-A DiaMaT demo is hosted [here](http://diamat.dfki.de).
+To facilitate the replication of experiments, if this repo is cloned, 500 MB of data will be directly downloaded from the GitHub LFS server.
 
 ## Installation 
 Download embeddings:
