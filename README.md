@@ -76,4 +76,8 @@ All preprocessed data needed to replicate the experiments is contained in ./data
 ```
 python preprocess.py
 ```
-Afterwards ./data/output/bundle.jsonl contains the bundled texts, tokens, indices etc. Rename bundle.jsonl and replace source.txt, machine.txt, human.txt and repeat the step if you would like to preprocess more data.
+Afterwards ./data/output/bundle.jsonl contains the bundled texts, tokens, indices etc. Rename bundle.jsonl, replace source.txt, machine.txt, human.txt and repeat the step if you would like to preprocess more data.
+
+Update ./data/input/config.INI and run train.py and explain.py again. 
+
+Update server/static/input/explain.jsonl w/ the new explanations and run the server again.
