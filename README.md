@@ -1,6 +1,11 @@
 # DiaMaT
 A diagnostics tool. 
 
+![screenshot](https://github.com/DFKI-NLP/diamat/blob/master/resources/screenshot.png)
+
+## Info 
+The tool deploys the [iNNvestigate] toolbox.
+
 ## Installation 
 Download embeddings:
 ```
