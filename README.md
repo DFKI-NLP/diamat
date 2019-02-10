@@ -32,6 +32,8 @@ python -m spacy download en
 ```
 
 ## Run / Replicate Experiments
+Unzip ./data/output.zip
+
 Run train.py and then explain.py, afterwards link data/output/explain.jsonl in server/static/input, e.g.:
 ```
 CUDA_VISIBLE_DEVICES=0 python3 train.py 2>&1 | tee -a ./data/output/fit_gpu_deeplee_quadro.log &&
@@ -55,9 +57,11 @@ All preprocessed data needed to replicate the experiments is contained in ./data
 - ./data/output/xtrain.jsonl > 100k JSON lines to train the explainability method (if needed)
 - ./data/output/explain.jsonl > ca 20k JSON lines to test DiaMaT on (drawn from the official WMT test sets / excluding WMT13)
 
+./data/output/explain.jsonl contains contributions (from the experiments) which are overwritten by explain.py 
+
 ### How to use your own data: 
-- prepare three parallel text files: source.txt, machine.txt and human.txt
-- then run
+- Prepare three parallel text files: source.txt, machine.txt and human.txt
+- Then run:
 ```
 python preprocess.py
 ```
