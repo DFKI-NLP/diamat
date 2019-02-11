@@ -1,5 +1,5 @@
 # DiaMaT
-A diagnostics tool. 
+An MT diagnostics tool. DiaMaT learns from corpora containing millions of translations but offers explanations on sentence level. 
 
 ![screenshot](https://github.com/DFKI-NLP/diamat/blob/master/resources/screenshot.png)
 
