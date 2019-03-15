@@ -81,6 +81,3 @@ Afterwards ./data/output/bundle.jsonl contains the bundled texts, tokens, indice
 Update ./data/input/config.INI and run train.py and explain.py again. 
 
 Update server/static/input/explain.jsonl w/ the new explanations and run the server again.
-
-## Disclaimer 
-This repository is a clean, refactored version of the original repository we ran the experiments with. As soon as we have replicated the experiments with this repo, this disclaimer will be removed.
