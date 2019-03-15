@@ -4,7 +4,7 @@ An MT diagnostics tool. DiaMaT learns from corpora containing millions of transl
 ![screenshot](https://github.com/DFKI-NLP/diamat/blob/master/resources/screenshot.png)
 
 ## Info 
-A DiaMaT demo is hosted [here](http://diamat.dfki.de).
+A DiaMaT demo is hosted [here](http://diamat.dfki.de). Optimized for the Firefox browser w/ a resolution of 1920x1080.
 
 DiaMaT deploys the [iNNvestigate](https://github.com/albermax/innvestigate) toolbox.
 
