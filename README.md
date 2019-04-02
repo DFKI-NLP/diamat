@@ -3,6 +3,18 @@ An MT diagnostics tool. DiaMaT learns from corpora containing millions of transl
 
 ![screenshot](https://github.com/DFKI-NLP/diamat/blob/master/resources/screenshot.png)
 
+Code accompanying the paper:
+
+```
+@inproceedings{Schwarzenberg_tse_2019,
+  title = {Train, Sort, Explain: Learning to Diagnose Translation Models},
+  booktitle = {Proceedings of the Annual Conference of the North American Chapter of the Association for Computational    Linguistics (NAACL-HLT): Demonstrations.},
+  author = {Schwarzenberg, Robert and Harbecke, David and Macketanz, Vivien and Avramidis, Eleftherios and M\"oller Sebastian},
+  address = {Minneapolis, Minnesota, USA},
+  year = {2019}
+  }
+```
+
 ## Info 
 A DiaMaT demo is hosted [here](http://diamat.dfki.de). Optimized for the Firefox browser w/ a resolution of 1920x1080.
 
