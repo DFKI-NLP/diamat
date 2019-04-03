@@ -10,7 +10,7 @@ Code accompanying the paper:
   title = {Train, Sort, Explain: Learning to Diagnose Translation Models},
   booktitle = {Proceedings of the Annual Conference of the North American Chapter of the Association for Computational Linguistics (NAACL-HLT): Demonstrations.},
   author = {Schwarzenberg, Robert and Harbecke, David and Macketanz, Vivien and Avramidis, Eleftherios and M\"oller, Sebastian},
-  address = {Minneapolis, Minnesota, USA},
+  location = {Minneapolis, Minnesota, USA},
   year = {2019}
   }
 ```
