@@ -66,7 +66,7 @@ ln -s ../../../data/output/explain.jsonl ./server/static/input/explain.jsonl 2>&
 Then start the server:
 ```
 cd server &&
-sh run_server.sh
+sh run_flask.sh
 ```
 Visit 
 ```
