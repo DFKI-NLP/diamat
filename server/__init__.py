@@ -232,8 +232,9 @@ def sort_explanations(form, explanations):  # TODO write docs
     return explanations, total_len, number_of_hits
 
 
-# on server startup read and cache explanations
-read_explanations()
+if __name__ == "__main__":
+    # on server startup read and cache explanations
+    read_explanations()
 
 
 def create_app():
@@ -294,7 +295,7 @@ def create_app():
                 explanations, total_len, number_of_hits = sort_explanations(form, explanations)
                 return render_template('items.html',
                                        form=form,
-                                       explanations=explanations,
+                                       expjsonl_to_explanationlanations=explanations,
                                        number_of_hits=number_of_hits,
                                        total_len=total_len)
 
