@@ -23,6 +23,16 @@ DiaMaT deploys the [iNNvestigate](https://github.com/albermax/innvestigate) tool
 To facilitate the replication of experiments, if this repo is cloned, 500 MB of data will be directly downloaded from the GitHub LFS server.
 
 ## Installation 
+Clone repo w/ lfs:
+
+```
+git lfs clone https://github.com/DFKI-NLP/diamat.git
+```
+
+If lfs download of data fails, download diamat/data/output.zip from
+
+https://cloud.dfki.de/owncloud/index.php/s/CJpQB8qPyKQzpJe
+
 Download embeddings:
 ```
 wget https://dl.fbaipublicfiles.com/fasttext/vectors-wiki/wiki.de.vec
@@ -66,7 +76,7 @@ ln -s ../../../data/output/explain.jsonl ./server/static/input/explain.jsonl 2>&
 Then start the server:
 ```
 cd server &&
-sh run_server.sh
+sh run_flask.sh
 ```
 Visit 
 ```
