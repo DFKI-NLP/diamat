@@ -15,8 +15,7 @@ Code accompanying the paper:
   }
 ```
 
-## Info 
-A DiaMaT demo is hosted [here](http://diamat.dfki.de). Optimized for the Firefox browser w/ a resolution of 1920x1080.
+## Info
 
 DiaMaT deploys the [iNNvestigate](https://github.com/albermax/innvestigate) toolbox.
 
