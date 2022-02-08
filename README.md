@@ -32,6 +32,10 @@ If lfs download of data fails, download diamat/data/output.zip from
 
 https://cloud.dfki.de/owncloud/index.php/s/C67aDo65dkANREc
 
+Alternative sources: 
+* input: https://cloud.dfki.de/owncloud/index.php/s/cQ7oWtgsmX2tmT2
+* output: https://cloud.dfki.de/owncloud/index.php/s/s46DxtAqDEAr29f
+
 Download embeddings:
 ```
 wget https://dl.fbaipublicfiles.com/fasttext/vectors-wiki/wiki.de.vec
