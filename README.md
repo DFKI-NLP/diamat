@@ -30,7 +30,7 @@ git lfs clone https://github.com/DFKI-NLP/diamat.git
 
 If lfs download of data fails, download diamat/data/output.zip from
 
-https://cloud.dfki.de/owncloud/index.php/s/CJpQB8qPyKQzpJe
+https://cloud.dfki.de/owncloud/index.php/s/C67aDo65dkANREc
 
 Download embeddings:
 ```
